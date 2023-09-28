@@ -29,7 +29,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 app.use(session({
-  secret: process.env.SESSION_KEY,
+  secret: 'jmv',
   resave: false,
   saveUninitialized: true
 }));
@@ -58,8 +58,8 @@ app.use("/api/v1/swagger", swaggerUI.serve, swaggerUI.setup(require("./swagger")
 
 // Configure the Google authentication strategy
 passport.use(new GoogleStrategy({
-  clientID: process.env.GOOGLE_CLIENT_ID,
-  clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+  clientID: '217255004585-u8vulpr7g7nqk7pmggnscblj5r4vdsht.apps.googleusercontent.com',
+  clientSecret: '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',
   callbackURL: "http://localhost:1001/google/callback"
 },
 function(accessToken, refreshToken, profile, done) {
